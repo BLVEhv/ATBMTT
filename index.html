@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELGAMAL ENCRYPTION ALGORITHM</title>
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        .title {
+            display: flex;
+            justify-content: center !important;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light title">
+        <a class="" href="/">ELGAMAL ENCRYPTION ALGORITHM</a>
+    </nav>
+    <main>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-lg-5">
+                    <h2>Person A</h2>
+                    <label>Public Key</label>
+                    <input type="text" id="pubKeyA" class="form-control">
+                </div>
+                <div class="col-lg-2">
+                    <button class="btn btn-primary" id="btn-genkey">Gennerate Key</button>
+                    <button class="btn btn-primary" id="btn-clear-encrypt">Clear </button>
+                </div>
+                <div class="col-lg-5">
+                    <h2>Person B</h2>
+                    <label>Public Key</label>
+                    <input type="text" id="pubKeyB" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5">
+                    <label for="">Message Encrypt</label>
+                    <textarea class="form-control" value="" name="inputEncrypt" id="inputEncrypt" cols="30"
+                        rows="5"></textarea>
+                </div>
+                <div class="col-lg-2">
+                </div>
+                <div class="col-lg-5">
+                    <label for="">Message Received</label>
+                    <textarea name="" id="inputDecrypt" class="form-control" cols="30" rows="5"
+                        placeholder=""></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-7">
+                    <button class="btn btn-primary my-2" id="btn-encrypt">Encrypt</button>
+
+                </div>
+                <div class="col-lg-5">
+                    <button class="btn btn-primary my-2" value="" id="btn-decrypt">Decrypt</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5">
+                    <label for="">Message Encrypted</label>
+                    <textarea class="form-control" name="" id="encrypted" cols="30" rows="5"></textarea>
+                </div>
+                <div class="col-lg-2">
+                </div>
+                <div class="col-lg-5">
+                    <label for="">Message Decrypted</label>
+                    <textarea name="" id="decrypted" class="form-control" cols="30" rows="5" placeholder=""></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <button class="btn btn-primary my-2" id="sendMsg">Send B</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <p class="text-center text-muted">&copy; Hoàng Trung Hiếu - 2020602568</p>
+</body>
+
+</html>
