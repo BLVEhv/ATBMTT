@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ELGAMAL ENCRYPTION ALGORITHM</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <style>
         body {
             padding-top: 50px;
@@ -84,6 +87,65 @@
         </div>
     </main>
     <p class="text-center text-muted">&copy; Hoàng Trung Hiếu - 2020602568</p>
+    <script>
+        const btnEncrypt = document.getElementById('btn-encrypt');
+        const btnDecrypt = document.getElementById('btn-decrypt');
+        const btnShowKey = document.getElementById('btn-genkey');
+        const btnClearEncrypt = document.getElementById('btn-clear-encrypt');
+
+        const inputEncrypt = document.getElementById('inputEncrypt');
+        const inputDecrypt = document.getElementById('inputDecrypt');
+        const pubKeyA = document.getElementById('pubKeyA');
+        const pubKeyB = document.getElementById('pubKeyB');
+
+        const msgEncrypted = document.getElementById('encrypted');
+        const msgDecrypted = document.getElementById('decrypted');
+
+        const btnSendMsg = document.getElementById('sendMsg');
+
+        let Alphabet = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ \nπ®ƒ©∆";
+        Alphabet = Alphabet.split("");
+
+        const A = Crypto(Alphabet, 69);
+        const B = Crypto(Alphabet, 69);
+
+        console.log('A: ', A);
+        console.log('B: ', B);
+
+        const showKey = () => {
+            pubKeyA.value = A.pubKey.join('-');
+            pubKeyB.value = B.pubKey.join('-');
+        };
+
+        const encrypt = () => {
+            msgEncrypted.value = A.encrypt(inputEncrypt.value, B.pubKey);
+        };
+
+        const decrypt = () => {
+            msgDecrypted.value = B.decrypt(inputDecrypt.value);
+        };
+
+        const clear = () => {
+            inputEncrypt.value = "";
+            pubKeyA.value = "";
+            pubKeyB.value = "";
+            msgDecrypted.value = "";
+            msgEncrypted.value = "";
+            inputDecrypt.value = "";
+        };
+
+        const sendMsg = () => {
+            inputDecrypt.value = msgEncrypted.value;
+        };
+
+
+        btnShowKey.addEventListener('click', showKey);
+        btnEncrypt.addEventListener('click', encrypt);
+        btnDecrypt.addEventListener('click', decrypt);
+        btnClearEncrypt.addEventListener('click', clear);
+        btnSendMsg.addEventListener('click', sendMsg)
+
+    </script>
 </body>
 
 </html>
